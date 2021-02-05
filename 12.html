@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12</title>
+</head>
+    <h1>მიმინიმალური რაოდენობის სიმბოლო:</h1>
+    <input type="text" id="minw">
+    <h1>მაქსიმალური რაოდენობის სიმბოლო:</h1>
+    <input type="text" id="maxw">
+    <h1>აბზაცში მიმინიმალური რაოდენობის სიტყვები:</h1>
+    <input type="text" id="mina">
+    <h1>აბზაცში მაქსიმალური რაოდენობის სიტყვები:</h1>
+    <input type="text" id="maxa">
+    <h1>აბზაცების რაოდენობა:</h1>
+    <input type="text" id="abz">
+    <br>
+    <br>
+    <select  id="language">
+        <option value='ქართული'>ქართული</option>
+        <option value='ინგლიური'>ინგლიური</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="doc()">button</button>
+    <h1 id="pg"></h1>
+    <script>
+        function doc(){
+        eWords=[
+        "a","b","c","d","e","f","g","h","i","j","k",
+        "l","m","n","o","p","q","r","s","t","w","x","v","z","y"]
+        gWords=[
+        "ა","ბ","გ","დ","ე","ვ","ზ","თ","ი","კ","ლ",
+        "მ","ნ","ო","პ","ჟ","რ","ს","ტ","უ","ფ","ქ","ღ","ყ","შ","ჩ","ც","ძ","წ","ჭ","ხ","ჯ","ჰ"]
+        a=0
+        abz=0
+        num=0
+        minWords=parseInt(document.getElementById("minw").value)
+        maxWords=parseInt(document.getElementById("maxw").value)
+        miNab=parseInt(document.getElementById("mina").value)
+        maXab=parseInt(document.getElementById("maxa").value)
+        abZra=parseInt(document.getElementById("abz").value)
+        lang=document.getElementById("language").value
+        language="ქართული"
+
+        siTab=Math.floor(miNab+Math.random()*(maXab-miNab))
+        sash=Math.floor(minWords+Math.random()*(maxWords-minWords))
+            answer=""
+            console.log(typeof("ქართული"))
+            console.log("dasd")
+            console.log(typeof(lang))
+            if("ქართული"==lang){
+                for(let d=0;d<abZra;d++){
+                        for(let i=0;i<siTab;i++){
+                        sash=Math.floor(minWords+Math.random()*(maxWords-minWords))
+                            for(let j=0;j<sash;j++){
+
+                                a=Math.floor(Math.random()*32)
+                                answer +=gWords[a]
+                            }
+                        answer+=" "
+                        }
+                    answer+=". "
+                    document.getElementById("pg").innerHTML=answer
+                }
+            }else{
+                for(let d=0;d<abZra;d++){
+                    for(let i=0;i<siTab;i++){
+                        sash=Math.floor(minWords+Math.random()*(maxWords-minWords))
+                        for(let j=0;j<sash;j++){
+
+                            a=Math.floor(Math.random()*25)
+                                answer +=eWords[a]
+                        }
+                    answer+=" "
+                    }
+                answer+=". "
+                }
+            document.getElementById("pg").innerHTML=answer
+            }
+        }
+    </script>
+</body>
+</html>

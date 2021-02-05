@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+</head>
+<body>
+<h1 id="varis"></h1>
+    <script> //დაწერეთ ფუნქცია, რომელიც დააგენერირებს n შემთხევითი სიმბოლოსგან 
+    //შემ-დგარი სიტყვებით შედგენილ 20 სიტყვიან სტრიქონს გამოტოვებებით.
+        n=prompt('enter number:')
+        words=["a","b","c","d","e","f","g","h","i","j","k",
+        "l","m","n","o","p","q","r","s","t","w","x","v","z","y"]
+        zu=parseInt(n)
+        z=(zu*20)
+        variants=""
+        for(let i=0; i<=z; i++){
+            x=variants.length
+            d=Math.ceil(Math.random()*24)
+            variants +=words[d]
+     
+            zeta=zu+1
+            if(x%zeta==0){
+
+                variants+=" "
+            }else if(variants.length>=z){
+                
+            }else{}
+        }
+        variants=variants.substring(1)
+        document.getElementById("varis").innerHTML=variants
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8</title>
+</head>
+<body> 
+<h1 id="varis"></h1> 
+    <script> //დაწერეთ ფუნქცია, რომელიც დააგენერირებს მინიმალური m და მაქსიმალური 
+    //n შემთხვევითი სიმბოლოსგან შემდგარი სიტყვების k რაოდენობისაგან შემდ-გარ სტრიქონს.
+        n=parseInt(prompt('enter n'))
+        m=parseInt(prompt('enter m'))
+        k=parseInt(prompt('enter k'))
+        words=["a","b","c","d","e","f","g","h","i","j","k",
+        "l","m","n","o","p","q","r","s","t","w","x","v","z","y"]
+
+        answers=""
+        for(let i=0; i<k;){
+            
+            sash=Math.floor(m+Math.random()*(n-m))
+            for(let j=0; j<sash; j+1){
+                a=Math.floor(Math.random()*25)
+                answers +=words[a]
+                j++
+            }
+            answers+=" "
+            i++
+        }
+        document.getElementById("varis").innerHTML=answers
+    </script>
+</body>
+</html>
